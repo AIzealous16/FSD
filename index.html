@@ -1,0 +1,117 @@
+```html id="g8z3s1"
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Webpage</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #f2f2f2;
+        }
+
+        nav {
+            background: #333;
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            margin: 15px;
+            text-decoration: none;
+        }
+
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background: white;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+        }
+
+        th {
+            background: #555;
+            color: white;
+        }
+
+        form {
+            width: 300px;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+        }
+
+        input, select, button {
+            width: 100%;
+            padding: 7px;
+            margin: 7px 0;
+            box-sizing: border-box;
+        }
+
+        button {
+            background: #333;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav>
+    <a href="#">Home</a>
+    <a href="#">Students</a>
+    <a href="#">Contact</a>
+</nav>
+
+<h1>Student Information</h1>
+
+<form id="form">
+    <input id="name" placeholder="Name" required>
+    <input id="email" type="email" placeholder="Email" required>
+
+    <select id="course">
+        <option value="">Select Course</option>
+        <option>AI & DS</option>
+        <option>Computer</option>
+    </select>
+
+    <button type="submit">Add Record</button>
+</form>
+
+<table id="table">
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Course</th>
+    </tr>
+</table>
+
+<script>
+document.getElementById("form").onsubmit = function(e) {
+
+    e.preventDefault();
+
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let course = document.getElementById("course").value;
+
+    let row = document.getElementById("table").insertRow();
+
+    row.innerHTML =
+        "<td>" + name + "</td>" +
+        "<td>" + email + "</td>" +
+        "<td>" + course + "</td>";
+
+    document.getElementById("form").reset();
+};
+</script>
+
+</body>
+</html>
+```
